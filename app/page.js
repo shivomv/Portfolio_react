@@ -34,13 +34,15 @@ export default function Home() {
       <Hero />
 
       {/* Container Scroll Section */}
-      <section className="bg-[#04081A] mb-20 mt-32">
+      <section className="bg-[#04081A] mb-12 md:mb-20 mt-16 md:mt-32">
         <ContainerScroll
           titleComponent={
-            <div className="flex flex-col items-center mb-10 mt-20">
-              <h1 className="text-4xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 tracking-tight text-center">
+            <div className="flex flex-col items-center mb-6 md:mb-10 mt-10 md:mt-20">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400 tracking-tight text-center">
                 Creative <br />
-                <span className="text-white md:text-[6rem]">Ecosystem</span>
+                <span className="text-white text-5xl sm:text-7xl md:text-[6rem]">
+                  Ecosystem
+                </span>
               </h1>
             </div>
           }
@@ -50,22 +52,22 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#04081A]/40 to-[#04081A]"></div>
             <ThreeDMarquee
               images={marqueeImages}
-              className="opacity-90 scale-125"
+              className="opacity-90 scale-110 md:scale-125"
             />
           </div>
         </ContainerScroll>
       </section>
 
       {/* Horizontal Scroll Section */}
-      <section className="bg-[#04081A] pt-24">
+      <section className="bg-[#04081A] pt-6 md:pt-24">
         <div className="container mx-auto px-4 mb-0 text-center flex flex-col items-center">
-          <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tighter">
             Technical{" "}
             <span className="text-blue-500 underline decoration-blue-500/20">
               Landscape
             </span>
           </h2>
-          <p className="text-neutral-500 mt-6 text-lg max-w-xl font-medium">
+          <p className="text-neutral-500 mt-2 md:mt-6 text-lg max-w-xl font-medium">
             Explore the core pillars of my development workflow through this
             interactive showcase.
           </p>
@@ -75,7 +77,7 @@ export default function Home() {
 
       <section className="py-12 relative z-50 bg-[#04081A] border-t border-white/5">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             Let's Build Something Great Together
           </h2>
           <p className="text-neutral-500 max-w-xl mx-auto text-lg leading-relaxed">
