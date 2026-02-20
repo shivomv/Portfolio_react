@@ -1,13 +1,31 @@
+import tailwindAnimate from "tailwindcss-animate";
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   darkMode: ["class"],
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./views/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     extend: {
       animation: {
         meteor: "meteor 5s linear infinite",
+        marquee: "marquee var(--duration) linear infinite",
+        beam: "beam var(--duration, 8s) ease-in-out infinite",
       },
       keyframes: {
+        beam: {
+          "0%": { transform: "translateX(0%)", opacity: "0" },
+          "5%": { opacity: "1" },
+          "95%": { opacity: "1" },
+          "100%": { transform: "translateX(200%)", opacity: "0" },
+        },
+        marquee: {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(-33.33%)" },
+        },
         meteor: {
           "0%": {
             transform: "rotate(215deg) translateX(0)",
@@ -61,15 +79,11 @@ module.exports = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        chart: {
-          1: "hsl(var(--chart-1))",
-          2: "hsl(var(--chart-2))",
-          3: "hsl(var(--chart-3))",
-          4: "hsl(var(--chart-4))",
-          5: "hsl(var(--chart-5))",
-        },
+      },
+      gridTemplateColumns: {
+        14: "repeat(14, minmax(0, 1fr))",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindAnimate],
 };
